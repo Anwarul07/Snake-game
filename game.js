@@ -1,14 +1,14 @@
 //Constant And Varibles 
-const inputDir = { x: 0, y: 0 };
+let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio("Files/food.mp3");
 const gameOver = new Audio("Files/gameover.mp3");
 const moveSound = new Audio("Files/move.mp3");
 const musicSound = new Audio("Files/music.mp3");
-const speed = 2;
-let scor = 0;
+const speed = 5;
+let Score = 0;
 let Section = document.querySelector(".section")
 let lastpaintTime = 0;
-let snakeArr = [{ x: 13, y: 15 }]
+let snakeArr = [{ x: 13, y: 15 }];
 Food = { x: 6, y: 7 };
 
 
@@ -28,9 +28,9 @@ function main(currTime) {
 
 // Display food and snake items 
 
-function isCollide(sArr) {
+function isCollide(snakeArrArr) {
     return false;
-    
+
 }
 function gameEngne() {
 
@@ -43,6 +43,24 @@ function gameEngne() {
         Score = 0;
 
     }
+
+    // game food regenerate and score updation
+
+    if (snakeArr[0].y === Food.y && snakeArr[0].x === Food.x) {
+        foodSound.play();
+        snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
+        let a = 2;
+        let b = 16;
+        Food = { x: Math.round(a + (b - a) * Math.random()), y: Math.round(a + (b - a) * Math.random()) };
+    }
+
+    //Moving The Snake
+    for (let i = snakeArr.length-2; i >=0; i--) {
+        snakeArr[i+1 ]= {...snakeArr[i]}   
+    }
+    snakeArr[0].x +=inputDir.x;
+    snakeArr[0].y +=inputDir.y;
+
 
 
 
@@ -91,11 +109,13 @@ window.addEventListener("keydown", e => {
             inputDir.x = 0;
             inputDir.y = 1;
             break;
-        case "Arrowleft":
-            console.log("Arrowleft Pressed");
-            inputDir.x = -1;
-            inputDir.y = 0;
-            break;
+
+            case "ArrowLeft":
+                console.log("ArrowLeft Pressed");
+                inputDir.x = -1;
+                inputDir.y = 0;
+                break;
+      
 
         case "ArrowRight":
             console.log("ArrowRight Pressed");
