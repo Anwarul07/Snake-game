@@ -28,15 +28,23 @@ function main(currTime) {
 
 // Display food and snake items 
 
-function isCollide(snakeArrArr) {
-    return false;
-
+function isCollide(sArr) {
+    for (let index = 1; index < snakeArr.length; index++) {
+        if (sArr[index].x === sArr[0].x && sArr[index].y === sArr[0].y) {
+            return true;
+        }
+    }
+    if (sArr[0].x >= 18 || sArr[0].x <= 0 || sArr[0].y >= 18 || sArr[0].y <= 0) {
+        return true;
+    }
 }
+
+
 function gameEngne() {
 
     if (isCollide(snakeArr)) {
         gameOver.play();
-        musicSound.paued();
+        musicSound.pause();
         inputDir = { x: 0, y: 0 };
         alert("Game Over ! pls press any key to play again");
         snakeArr = [{ x: 13, y: 15 }];
@@ -48,6 +56,8 @@ function gameEngne() {
 
     if (snakeArr[0].y === Food.y && snakeArr[0].x === Food.x) {
         foodSound.play();
+        Score += 1;
+        document.querySelector("#score").innerHTML="Score: "+ Score;
         snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
         let a = 2;
         let b = 16;
@@ -55,11 +65,11 @@ function gameEngne() {
     }
 
     //Moving The Snake
-    for (let i = snakeArr.length-2; i >=0; i--) {
-        snakeArr[i+1 ]= {...snakeArr[i]}   
+    for (let i = snakeArr.length - 2; i >= 0; i--) {
+        snakeArr[i + 1] = { ...snakeArr[i] }
     }
-    snakeArr[0].x +=inputDir.x;
-    snakeArr[0].y +=inputDir.y;
+    snakeArr[0].x += inputDir.x;
+    snakeArr[0].y += inputDir.y;
 
 
 
@@ -96,6 +106,7 @@ window.requestAnimationFrame(main);
 window.addEventListener("keydown", e => {
     inputDir = { x: 0, y: 1 }// Start the Game
     moveSound.play();
+    musicSound.play()
 
     switch (e.key) {
         case "ArrowUp":
@@ -110,12 +121,12 @@ window.addEventListener("keydown", e => {
             inputDir.y = 1;
             break;
 
-            case "ArrowLeft":
-                console.log("ArrowLeft Pressed");
-                inputDir.x = -1;
-                inputDir.y = 0;
-                break;
-      
+        case "ArrowLeft":
+            console.log("ArrowLeft Pressed");
+            inputDir.x = -1;
+            inputDir.y = 0;
+            break;
+
 
         case "ArrowRight":
             console.log("ArrowRight Pressed");
@@ -125,6 +136,5 @@ window.addEventListener("keydown", e => {
         default:
             break;
     }
-})
-
+});
 
