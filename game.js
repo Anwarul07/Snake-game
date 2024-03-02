@@ -4,7 +4,7 @@ const foodSound = new Audio("Files/food.mp3");
 const gameOver = new Audio("Files/gameover.mp3");
 const moveSound = new Audio("Files/move.mp3");
 const musicSound = new Audio("Files/music.mp3");
-const speed = 5;
+const speed = 3;
 let Score = 0;
 let Section = document.querySelector(".section")
 let lastpaintTime = 0;
@@ -57,7 +57,7 @@ function gameEngne() {
     if (snakeArr[0].y === Food.y && snakeArr[0].x === Food.x) {
         foodSound.play();
         Score += 1;
-        document.querySelector("#score").innerHTML="Score: "+ Score;
+        document.querySelector("#score").innerHTML = "Score: " + Score;
         snakeArr.unshift({ x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y });
         let a = 2;
         let b = 16;
@@ -110,26 +110,26 @@ window.addEventListener("keydown", e => {
 
     switch (e.key) {
         case "ArrowUp":
-            console.log("ArrowUp Pressed");
+            console.log("ArrowUp Pressed" + " KeyCode " + e.keyCode + " Pressed");
             inputDir.x = 0;
             inputDir.y = -1;
             break;
 
         case "ArrowDown":
-            console.log("ArrowDown Pressed");
+            console.log("ArrowDown Pressed" + " KeyCode " + e.keyCode + " Pressed");
             inputDir.x = 0;
             inputDir.y = 1;
             break;
 
         case "ArrowLeft":
-            console.log("ArrowLeft Pressed");
+            console.log("ArrowLeft Pressed" + " KeyCode " + e.keyCode + " Pressed");
             inputDir.x = -1;
             inputDir.y = 0;
             break;
 
 
         case "ArrowRight":
-            console.log("ArrowRight Pressed");
+            console.log("ArrowRight Pressed" + " KeyCode " + e.keyCode + " Pressed");
             inputDir.x = 1;
             inputDir.y = 0;
             break;
@@ -138,3 +138,41 @@ window.addEventListener("keydown", e => {
     }
 });
 
+let up = document.querySelector("#up");
+up.addEventListener("click", () => {
+    inputDir.x = 0;
+    inputDir.y = -1;
+    moveSound.play();
+    musicSound.play()
+    console.log("up clicked")
+
+});
+
+let down=document.querySelector("#down");
+down.addEventListener("click", () => {
+    inputDir.x = 0;
+    inputDir.y = 1;
+    moveSound.play();
+    musicSound.play()
+    console.log("down clicked")
+
+});
+
+let left=document.querySelector("#left");
+left.addEventListener("click", () => {
+    inputDir.x = -1;
+    inputDir.y = 0;
+    moveSound.play();
+    musicSound.play()
+    console.log("left clicked")
+
+});
+
+let right=document.querySelector("#right");
+right.addEventListener("click", () => {
+    inputDir.x = 1;
+    inputDir.y = 0;
+    moveSound.play();
+    musicSound.play()
+    console.log("right clicked")
+});
