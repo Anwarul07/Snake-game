@@ -1,41 +1,45 @@
-
-/* 2300 px media quarry */
-@media only screen and (max-width:2300px) {
-    .section {
-        margin-right: 15vw;
-      }
-}
-/* 2000 px media quarry */
-@media only screen and (max-width:2000px) {
-    .section {
-        margin-left:-150px;
-      }
-}
-@media only screen and (max-width:1700px) {
+@media only screen and (max-width:750px) {
 .section{
-    margin-left: -200px;
-
-}}
-
-/* 1500 px media quarry */
-@media only screen and (max-width:1500px) {
-    .section {
-      width: 75vmin;
-      }
+    margin-left: -100px;
 }
-/* 1300 px media quarry */
-@media only screen and (max-width:1400px) {
-    .section {
-      width: 70vmin;}
-      .body {
-        background: url("/Files/bg.jpg");
-        height: 100vh;
-        width: 100vw;
-        background-size: 90vw 90vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+#score{
+  position: absolute;
+  left: 30vw;
+}
+}
+
+
+
+@media only screen and (max-width:600px) {
+  .section{
+      max-width: 70vmin;
+  }
+  #score{
+    position: absolute;
+    left: 30vw;
+  }
+  }
+
+  @media only screen and (max-width:550px) {
+    .section{
+        max-width: 65vmin;
+        margin-left: -10vw;
+    }
+    #score{
+      position: absolute;
+      left: 30vw;
+    }
+    }
+
+    @media only screen and (max-width:500px) {
+      .section{
+          min-width: 90vw;
+          margin: auto;
+      }
+      #score{
+        position: absolute;
+        left: 30vw;
       }
       }
+
+      

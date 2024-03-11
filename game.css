@@ -45,13 +45,13 @@ body {
 }
 #score {
   position: absolute;
-  top: 45px;
-  left: 76vw;
-  font-size: xx-large;
+  top: 25px;
+  left: 40vw;
+  font-size: 2vw;
   font-weight: bolder;
   color: white;
   font-family: "Syne", sans-serif;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
 }
 
 .btn {
