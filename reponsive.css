@@ -1,45 +1,54 @@
-@media only screen and (max-width:750px) {
-.section{
+@media only screen and (max-width: 750px) {
+  .section {
     margin-left: -100px;
-}
-#score{
-  position: absolute;
-  left: 30vw;
-}
-}
-
-
-
-@media only screen and (max-width:600px) {
-  .section{
-      max-width: 70vmin;
   }
-  #score{
+  #score {
     position: absolute;
     left: 30vw;
   }
+}
+
+@media only screen and (max-width: 600px) {
+  .section {
+    max-width: 70vmin;
   }
+  #score {
+    position: absolute;
+    left: 30vw;
+  }
+}
 
-  @media only screen and (max-width:550px) {
-    .section{
-        max-width: 65vmin;
-        margin-left: -10vw;
-    }
-    #score{
-      position: absolute;
-      left: 30vw;
-    }
-    }
+@media only screen and (max-width: 550px) {
+  .section {
+    max-width: 65vmin;
+    margin-left: -10vw;
+  }
+  #score {
+    position: absolute;
+    left: 30vw;
+  }
+}
 
-    @media only screen and (max-width:500px) {
-      .section{
-          min-width: 90vw;
-          margin: auto;
-      }
-      #score{
-        position: absolute;
-        left: 30vw;
-      }
-      }
+@media only screen and (max-width: 500px) {
+  .section {
+    min-width: 90vw;
+    margin: auto;
+  }
+  #score {
+    position: absolute;
+    left: 30vw;
+  }
+}
 
-      
+/*heighjt start from here */
+/* @media only screen and (min-height: 700px) {
+  .section {
+    min-width: 90vw;
+    margin: auto;
+    background-position: bottom; 
+    height: 100vmin;
+  }
+} */
+
+
+

@@ -55,46 +55,35 @@ body {
 }
 
 .btn {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   color: rgb(238, 233, 243);
   font-family: "Syne", sans-serif;
   font-size: 18px;
   padding: 0.25rem;
   border-radius: 50%;
   border: none;
-  margin: 0.5rem;
+  margin: 1rem;
   color: red;
 }
-.control {
-  position: relative;
-  top: 10px;
-  left: 48vw;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-}
-#up{
+
+#up {
   position: absolute;
-  top: 0px;
+  top: 7vw;
+  left: 150px;
+}
+#down {
+  position: absolute;
+  bottom: 7vw;
   left: 50px;
-
 }
-#down{
+#left {
   position: absolute;
-  top: 10px;
-  left:50px;
-
+  top: 7vw;
+left:  50px;
 }
-#left{
+#right {
   position: absolute;
-  top: 70px;
-  right: 140px;
-
-}
-#right{
-  position: absolute;
-  bottom: 25px;
-    left: 50px;
-  
+  bottom: 7vw;
+  left: 150px;
 }
